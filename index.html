@@ -8,6 +8,10 @@
     <title>property-webpage</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./index.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+    <link rel="stylesheet" href="popup.css" />
+
 </head>
 
 <body>
@@ -18,10 +22,11 @@
         <div class="navbar">
             <!-- Logo -->
             <img src="https://s3-ap-southeast-1.amazonaws.com/mycrm-pro-accounts-v2/client/logo/3763/R1QiF9R3aMR3duTI.jpg?=1669856902"
-                class="logo-image max-h-[100px]" alt="LOGO" />
+                class="logo-image" style="max-width: 150px;" alt="LOGO" />
             <!-- navigation -->
             <div class="navigation">
-                <a href="#" class="primary">
+                <button class="primary" onclick="pop.open('Share', 'Text')"
+                    style="border: 0px; background-color: transparent; cursor: pointer;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         class="bi bi-share" viewBox="0 0 16 16">
                         <path
@@ -29,9 +34,11 @@
                     </svg>
 
 
-                </a>
-                <button class="primary" style="border: 0px; background-color: transparent; cursor: pointer;"
-                    onclick="window.print()">
+                </button>
+
+
+                <a class="primary" href="./property-webpage.pdf" download="property-webpage"
+                    style="border: 0px; background-color: transparent; cursor: pointer;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         class="bi bi-download" viewBox="0 0 16 16">
                         <path
@@ -40,18 +47,21 @@
                             d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
                     </svg>
 
-                </button>
-                <a href="#" class="primary">
+                </a>
+
+                <button class="primary" style="border: 0px; background-color: transparent; cursor: pointer;"
+                    onclick="window.print()">
+
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         class="bi bi-printer" viewBox="0 0 16 16">
                         <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
                         <path
                             d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z" />
                     </svg>
-                </a>
+                </button>
             </div>
-            <!-- Carrosel -->
         </div>
+        <!-- Carrosel -->
         <div class="carrosel">
             <!-- Swiper -->
             <div class="swiper mySwiper">
@@ -69,12 +79,24 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
+        <div class="gird-of-img">
+            <div class="swiper-slide"><img
+                    src="https://s3-ap-southeast-1.amazonaws.com/mycrm-pro-accounts-v2/property/full/3763/2bf3b292-be91-4834-84c9-9439ef43ad6a.jpeg "
+                    alt="" /></div>
+            <div class="swiper-slide"><img
+                    src="https://s3-ap-southeast-1.amazonaws.com/mycrm-pro-accounts-v2/property/full/3763/5ef2c2cd-c4c9-4651-baa0-aaeb4e02b19a.jpeg "
+                    alt="" /></div>
+            <div class="swiper-slide"><img
+                    src="https://s3-ap-southeast-1.amazonaws.com/mycrm-pro-accounts-v2/property/full/3763/0f3c0554-e736-49af-9545-dce50ee96b22.jpeg"
+                    alt="" /></div>
+        </div>
+
         <!-- Content -->
         <div class="content">
             <!-- Title -->
             <div class="product-title">
-                <h1 class="title">5 Br Villa for Rent</h1>
-                <h2 class="subtitle">Hamala, Northern Governorate</h2>
+                <h1 class="">5 Br Villa for Rent</h1>
+                <h2 class="product-sub" style="color: lightslategray;">Hamala, Northern Governorate</h2>
             </div>
             <!-- Pricing -->
             <div class="pricing">
@@ -216,9 +238,14 @@
         <a href="amraboras.webflow.io" class="text-blue-700"> AMR ABORAS</a>
     </div>
 
+
+
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
+    <!-- Html2pdf JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"
+        integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper(".mySwiper", {
@@ -226,6 +253,41 @@
                 el: ".swiper-pagination",
             },
         });
+
+        var pop = {
+            // (A) ATTACH POPUP HTML
+            pWrap: null,  // html popup wrapper
+            pTitle: null, // html popup title
+            pText: null,  // html popup text
+            init: () => {
+                // (A1) POPUP WRAPPER
+                pop.pWrap = document.createElement("div");
+                pop.pWrap.id = "popwrap";
+                document.body.appendChild(pop.pWrap);
+
+                // (A2) POPUP INNERHTML
+                pop.pWrap.innerHTML =
+                    `<div id="popbox">
+      <h1 id="poptitle"></h1>
+      <p id="poptext"></p>
+      <div id="popclose" onclick="pop.close()">&#9746;</div>
+    </div>`;
+                pop.pTitle = document.getElementById("poptitle");
+                pop.pText = document.getElementById("poptext");
+            },
+
+            // (B) OPEN POPUP
+            open: (title, text) => {
+                pop.pTitle.innerHTML = title;
+                pop.pText.innerHTML = text;
+                pop.pWrap.classList.add("open");
+            },
+
+            // (C) CLOSE POPUP
+            close: () => { pop.pWrap.classList.remove("open"); }
+        };
+        window.addEventListener("DOMContentLoaded", pop.init);
+
     </script>
 
 
